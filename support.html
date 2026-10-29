@@ -1,182 +1,187 @@
+
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#0b1019">
-  <meta name="description" content="Help and support for Kinest, the offline video player for iPhone and iPad. Learn how to open videos, use subtitles, and troubleshoot playback.">
+  <meta name="description" content="Kinest support: learn how to open videos, import subtitles, and troubleshoot local playback.">
   <title>Support — Kinest</title>
-  <style>
-    :root {
-      color-scheme: dark;
-      --bg: #0b1019;
-      --surface: #111925;
-      --surface-alt: #151f2d;
-      --border: #273244;
-      --text: #f5f8fd;
-      --muted: #9fadc2;
-      --blue: #78a8ff;
-      --blue-strong: #3d8dff;
-      --radius: 18px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      font-synthesis: none;
-      -webkit-font-smoothing: antialiased;
-    }
-    *, *::before, *::after { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      min-height: 100vh;
-      color: var(--text);
-      background: radial-gradient(ellipse 80% 430px at 50% -125px, #17335a 0%, rgba(16,31,54,.3) 65%, transparent 100%), var(--bg);
-      line-height: 1.65;
-    }
-    a { color: var(--blue); text-underline-offset: 3px; }
-    a:hover { color: #b1cfff; }
-    a:focus-visible { outline: 3px solid var(--blue); outline-offset: 4px; border-radius: 3px; }
-    .shell { width: min(100% - 40px, 980px); margin-inline: auto; }
-    header { border-bottom: 1px solid rgba(147,171,207,.13); }
-    .topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 82px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; text-decoration: none; color: var(--text); font-size: 1.1rem; font-weight: 750; letter-spacing: -.03em; }
-    .brand-icon { display: grid; place-items: center; width: 36px; height: 36px; border: 1px solid #304660; border-radius: 11px; background: linear-gradient(145deg, #18273e, #0b1421); }
-    .brand-icon::before { content: ""; display: block; width: 20px; height: 23px; background: linear-gradient(140deg, #5fe3ff, #3189ff 63%, #3260f6); clip-path: polygon(8% 0, 100% 50%, 8% 100%); border-radius: 3px; }
-    .top-label { color: var(--muted); font-size: .9rem; }
-    .hero { padding: 70px 0 44px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 8px; color: var(--blue); font-size: .77rem; font-weight: 750; letter-spacing: .13em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 14px #4a96ff; }
-    h1 { margin: 14px 0 12px; max-width: 740px; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.08; letter-spacing: -.065em; }
-    h1 span { color: var(--blue); }
-    .lead { max-width: 640px; margin: 0; color: var(--muted); font-size: clamp(1rem, 2vw, 1.15rem); }
-    .quicklinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
-    .quicklinks a { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 8px 15px; border: 1px solid var(--border); border-radius: 999px; background: rgba(22,33,49,.75); color: var(--text); font-size: .89rem; text-decoration: none; }
-    .quicklinks a:hover { background: var(--surface-alt); border-color: #5176b1; color: white; }
-    main { padding-bottom: 76px; }
-    .section-head { margin: 22px 0 17px; }
-    h2 { margin: 0; font-size: 1.65rem; line-height: 1.2; letter-spacing: -.035em; }
-    .section-intro { margin: 7px 0 0; color: var(--muted); }
-    .cards { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 16px; }
-    .card { padding: 25px 26px; border: 1px solid var(--border); border-radius: var(--radius); background: linear-gradient(150deg, rgba(25,37,54,.9), rgba(16,23,35,.96)); }
-    .card h3 { margin: 0 0 9px; font-size: 1.1rem; letter-spacing: -.015em; }
-    .card p { margin: 0; color: var(--muted); }
-    .number { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; margin-bottom: 16px; border-radius: 8px; background: rgba(77,140,255,.15); color: #a9c9ff; font-size: .82rem; font-weight: 800; }
-    .block { margin-top: 34px; }
-    .block .card { margin-top: 16px; }
-    .steps { margin: 0; padding-left: 20px; color: var(--muted); }
-    .steps li { padding-left: 4px; margin: 9px 0; }
-    strong { color: var(--text); font-weight: 650; }
-    .faq { display: grid; gap: 12px; margin-top: 16px; }
-    .faq article { border: 1px solid var(--border); border-radius: 14px; padding: 17px 22px; background: rgba(17,25,37,.86); }
-    .faq h3 { margin: 0 0 5px; font-size: 1rem; }
-    .faq p { margin: 0; color: var(--muted); }
-    .contact { margin-top: 34px; padding: 30px; border: 1px solid #39517a; border-radius: var(--radius); background: linear-gradient(110deg, #14243d, #101a2a); }
-    .contact h2 { margin-bottom: 9px; }
-    .contact p { margin: 0 0 19px; color: var(--muted); }
-    .contact-link { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border-radius: 11px; background: var(--blue-strong); color: white; font-weight: 700; text-decoration: none; overflow-wrap: anywhere; }
-    .contact-link:hover { color: white; background: #246edb; }
-    footer { border-top: 1px solid rgba(147,171,207,.13); padding: 24px 0 38px; }
-    footer .shell { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px 18px; color: var(--muted); font-size: .85rem; }
-    @media (max-width: 650px) {
-      .shell { width: min(100% - 32px, 980px); }
-      .topbar { min-height: 72px; }
-      .hero { padding-top: 50px; }
-      .cards { grid-template-columns: 1fr; }
-      .card { padding: 21px; }
-      .contact { padding: 24px 20px; }
-      .top-label { font-size: .8rem; }
-    }
-    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header>
-    <div class="shell topbar">
-      <a class="brand" href="#top" aria-label="Kinest Support home">
-        <span class="brand-icon" aria-hidden="true"></span><span>Kinest</span>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="./" aria-label="Kinest home">
+        <span class="brand-icon" aria-hidden="true"></span>
+        <span>Kinest</span>
       </a>
-      <span class="top-label">Support Center</span>
-    </div>
-  </header>
-  <div id="top" class="shell">
-    <div class="hero">
-      <div class="eyebrow">Here to help</div>
-      <h1>Your videos.<br><span>Made simple.</span></h1>
-      <p class="lead">Everything you need to get started with Kinest, the offline, folder-first video player for iPhone and iPad.</p>
-      <nav class="quicklinks" aria-label="On this page">
-        <a href="#getting-started">Getting started</a>
-        <a href="#subtitles">Subtitles &amp; audio</a>
-        <a href="#troubleshooting">Troubleshooting</a>
-        <a href="#contact">Contact</a>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="./">Home</a>
+        <a href="support.html" aria-current="page">Support</a>
+        <a href="privacy.html">Privacy</a>
       </nav>
     </div>
-    <main>
-      <section id="getting-started" aria-labelledby="start-heading">
-        <div class="section-head">
-          <h2 id="start-heading">Getting started</h2>
-          <p class="section-intro">Your videos stay on your device. No account or internet connection required.</p>
-        </div>
-        <div class="cards">
-          <article class="card">
-            <span class="number" aria-hidden="true">01</span>
-            <h3>Add your videos</h3>
-            <p>Use the <strong>Files</strong> app to place local video files in a folder available to Kinest. For example, use <strong>On My iPhone/iPad → Kinest</strong>.</p>
-          </article>
-          <article class="card">
-            <span class="number" aria-hidden="true">02</span>
-            <h3>Open a folder and play</h3>
-            <p>Browse your folders in Kinest, then tap a video to watch. Compatible <strong>MP4, MOV, and M4V</strong> files play using Apple's native media framework.</p>
-          </article>
-        </div>
-      </section>
-      <section id="subtitles" class="block" aria-labelledby="subtitles-heading">
-        <div class="section-head">
-          <h2 id="subtitles-heading">Subtitles &amp; audio</h2>
-          <p class="section-intro">Choose available tracks without leaving the player.</p>
-        </div>
-        <div class="card">
-          <ol class="steps">
-            <li>Open a video and tap the <strong>Subtitles &amp; Audio</strong> icon in the player's top controls.</li>
-            <li>In the compact menu, choose an available subtitle track or select <strong>Off</strong>.</li>
-            <li>To use your own file, tap <strong>Add Subtitle…</strong> and choose an <strong>.srt</strong> file from Files.</li>
-            <li>If your video contains multiple audio tracks, select one in the <strong>Audio</strong> section of the same menu.</li>
-          </ol>
-          <p style="margin:17px 0 0; color:var(--muted)">Imported subtitle copies are kept locally by Kinest so they remain available after the file picker closes.</p>
-        </div>
-      </section>
-      <section id="troubleshooting" class="block" aria-labelledby="troubleshooting-heading">
-        <div class="section-head">
-          <h2 id="troubleshooting-heading">Troubleshooting</h2>
-          <p class="section-intro">A few things to check if playback or subtitles don't look right.</p>
-        </div>
-        <div class="faq">
-          <article>
-            <h3>My video won't play.</h3>
-            <p>Check that the container and video/audio codecs are supported by your device. A file extension alone does not guarantee compatibility.</p>
-          </article>
-          <article>
-            <h3>My subtitle file isn't showing.</h3>
-            <p>Check the SRT file's timing and text encoding, then try importing it again from Files. Confirm that subtitles are not set to Off.</p>
-          </article>
-          <article>
-            <h3>A folder or video is missing.</h3>
-            <p>Verify that the file or folder is still available in the Files app and that its storage provider has made it accessible locally.</p>
-          </article>
-          <article>
-            <h3>Will Kinest stream videos from the internet?</h3>
-            <p>Kinest focuses on compatible local files. Network streaming and unsupported container formats are not part of its current feature set.</p>
-          </article>
-        </div>
-      </section>
-      <section id="contact" class="contact" aria-labelledby="contact-heading">
-        <h2 id="contact-heading">Still need help?</h2>
-        <p>Questions, feedback, or a playback issue? Describe what happened and include your iPhone or iPad model and iOS version if relevant.</p>
-        <a class="contact-link" href="mailto:emreesrc@gmail.com?subject=Kinest%20Support">Email Kinest Support</a>
-      </section>
-    </main>
-  </div>
-  <footer>
-    <div class="shell">
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">Kinest Support</p>
+      <h1>
+        Here to <span class="accent">help.</span>
+      </h1>
+      <p class="lead">
+        Everything you need to get started with Kinest,
+        manage your videos, and enjoy offline playback.
+      </p>
+    </section>
+
+    <section class="section" aria-labelledby="start-heading">
+      <h2 id="start-heading">Getting started</h2>
+      <p class="section-description">
+        Your videos stay on your device. No account required.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <span class="card-number" aria-hidden="true">01</span>
+          <h3>Add your videos</h3>
+          <p>
+            Use the Apple Files app to place local videos
+            in a folder available to Kinest.
+          </p>
+          <p>
+            For example:
+            <strong>Files → On My iPhone/iPad → Kinest</strong>
+          </p>
+        </article>
+
+        <article class="card">
+          <span class="card-number" aria-hidden="true">02</span>
+          <h3>Open and play</h3>
+          <p>
+            Open Kinest, browse your folders, and tap a video
+            to start watching.
+          </p>
+          <p>
+            Compatible MP4, MOV, and M4V files use Apple's
+            native playback technology.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="subtitles-heading">
+      <h2 id="subtitles-heading">Subtitles &amp; audio</h2>
+      <p class="section-description">
+        Switch tracks and add external subtitles without
+        leaving the player.
+      </p>
+
+      <div class="card">
+        <ol>
+          <li>
+            Open a video and tap the
+            <strong>Subtitles &amp; Audio</strong>
+            icon in the top player controls.
+          </li>
+          <li>
+            In the compact menu, select an available
+            subtitle track or choose <strong>Off</strong>.
+          </li>
+          <li>
+            To import your own subtitle file, tap
+            <strong>Add Subtitle…</strong> and choose
+            an <strong>.srt</strong> file from Files.
+          </li>
+          <li>
+            If your video offers multiple audio tracks,
+            choose one in the <strong>Audio</strong>
+            section of the same menu.
+          </li>
+        </ol>
+
+        <p>
+          Imported subtitle copies are kept locally
+          by Kinest so they remain available after
+          the Files picker closes.
+        </p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="troubleshooting-heading">
+      <h2 id="troubleshooting-heading">Troubleshooting</h2>
+      <p class="section-description">
+        Common questions and quick fixes.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>My video won't play.</h3>
+          <p>
+            Check that both the file container and its
+            video/audio codecs are supported by your device.
+            A supported extension alone does not guarantee
+            playback compatibility.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>My subtitles aren't showing.</h3>
+          <p>
+            Confirm that subtitles are enabled. Check the
+            SRT file's timing and text encoding, then
+            try importing it again.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>A video or folder is missing.</h3>
+          <p>
+            Make sure the item is still available in the
+            Files app and that its storage provider has
+            made it accessible locally.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Can Kinest stream online videos?</h3>
+          <p>
+            Kinest focuses on compatible local video files.
+            Network streaming is not part of its current
+            feature set.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section contact-card" aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Still need help?</h2>
+      <p>
+        Questions, feedback, or a playback issue?
+        Let us know what happened. Including your device
+        model and iOS version can help us investigate.
+      </p>
+
+      <a class="btn btn-primary"
+         href="mailto:emreesrc@gmail.com?subject=Kinest%20Support">
+        Email Kinest Support
+      </a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
       <span>© 2026 Kinest. Built for your videos.</span>
-      <span>Offline playback · iPhone &amp; iPad</span>
+
+      <nav class="footer-links" aria-label="Footer navigation">
+        <a href="./">Home</a>
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="mailto:emreesrc@gmail.com">Contact</a>
+      </nav>
     </div>
   </footer>
 </body>
