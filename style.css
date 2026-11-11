@@ -740,3 +740,15 @@ body.landing .phone-screen{position:relative;display:block}
   .site-nav { gap: 7px 13px; }
   .site-nav a { font-size: 12px; }
 }
+
+/* Keep the existing 960px site header/footer width across every route. */
+body.landing .site-header .container,
+body.landing .site-footer .container {
+  width: min(calc(100% - 40px), 960px);
+}
+@media (max-width: 650px) {
+  body.landing .site-header .container,
+  body.landing .site-footer .container {
+    width: min(calc(100% - 32px), 960px);
+  }
+}
