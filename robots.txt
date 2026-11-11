@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://emmre.github.io/kinest-support/sitemap.xml
