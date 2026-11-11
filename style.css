@@ -624,11 +624,6 @@ body.landing .faq details p{color:#a7b7cb;font-size:14px;margin:12px 0 0}
 body.landing .closing{text-align:center;padding-block:84px 100px}
 body.landing .closing h2{margin:0 0 16px}
 body.landing .closing p{color:var(--muted);margin-bottom:28px}
-body.landing .site-footer{border-top:1px solid var(--border)}
-body.landing .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:29px 0;color:var(--muted);font-size:13px}
-body.landing .footer-links{display:flex;flex-wrap:wrap;gap:20px}
-body.landing .footer-links a{color:var(--muted);text-decoration:none}
-body.landing .footer-links a:hover{color:white}
 body.landing .guide:focus-visible,body.landing .appstore-badge:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
 @media(max-width:900px){body.landing .hero{grid-template-columns:1fr;text-align:center;gap:55px;padding-block:75px}
 body.landing .hero-copy h1,body.landing .hero-copy .description{margin-inline:auto}
@@ -655,7 +650,6 @@ body.landing .feature{min-height:auto;padding:25px}
 body.landing .spotlight{padding-block:70px}
 body.landing .privacy-strip{padding-block:56px}
 body.landing .privacy-symbol{display:none}
-body.landing .footer-inner{flex-direction:column;align-items:flex-start}
 body.landing .trustline .container{gap:15px 25px}
 body.landing .trustline span{font-size:12px}
 body.landing .closing{padding-block:65px 70px}
