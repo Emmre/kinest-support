@@ -712,3 +712,37 @@ body.landing .phone-screen{position:relative;display:block}
 .guide-links a{border:1px solid var(--border);border-radius:11px;padding:9px 13px;text-decoration:none;background:var(--surface);font-size:13px}
 .guide-note{font-size:14px;border-left:3px solid var(--accent);padding-left:16px}
 @media(max-width:600px){.site-nav{gap:11px}.site-nav a{font-size:12px}}
+
+/* Shared page consistency and small-screen navigation */
+.privacy-document .privacy-information {
+  margin-top: 32px;
+}
+@media (max-width: 650px) {
+  .header-inner {
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 0;
+    padding-block: 12px 10px;
+  }
+  .site-nav {
+    flex: 1 0 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding-top: 8px;
+    padding-bottom: 5px;
+  }
+  .site-nav a {
+    font-size: 13px;
+  }
+  .site-nav a[aria-current="page"]::after {
+    bottom: -6px;
+  }
+  .footer-links {
+    gap: 10px 18px;
+  }
+}
+@media (max-width: 360px) {
+  .site-nav { gap: 7px 13px; }
+  .site-nav a { font-size: 12px; }
+}
